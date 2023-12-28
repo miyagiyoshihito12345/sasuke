@@ -1,8 +1,19 @@
-<h1 style="text-align: center;">サスケ</h1>
-<p style="text-align: center;">神威を引け！サスケ！！</p>
+<p style="text-align: center; font-size: 20px;">あなたが開眼した万華鏡は...</p>
+<h1 style="text-align: center;"><%= @name %></h1>
+<p style="text-align: center;">お前がこれからどうなろうと、俺はお前をずっと愛している...</p>
 <div style="width: 300px; margin-left: auto; margin-right: auto;">
-    <%= image_tag "mangekyo_#{rand(1..4)}.webp", style: 'width: 300px;' %>
+    <%= image_tag "mangekyo_#{@number}.webp", style: 'width: 300px;' %>
 </div>
 <div style="display: block; margin-left: auto; width: 160px; margin-right: auto;">
-<%= link_to "もう一度ガチャを回す", staticpages_result_path, class: 'btn' %>
+<%= link_to "もう一度ガチャを回す", staticpages_result_path, style: 'color: white;' %>
+</div>
+<div style="margin-top: 50px; display: block; margin-left: auto; width: 160px; margin-right: auto;">
+  <%= link_to "Twitterでシェアする",
+    "https://twitter.com/intent/tweet?url=
+      #{ root_url }&text=万華鏡写輪眼【#{@name}】を開眼しました。
+      %0a%0a%23NARUTO%20%20%0a%23万華鏡写輪眼ガチャ%20%0a",
+          style: 'color: white;', target: '_blank' %>
+</div>
+<div style="margin-top: 50px; display: block; margin-left: auto; width: 160px; margin-right: auto;">
+<%= link_to "トップに戻る", root_path, style: 'color: white;' %>
 </div>
